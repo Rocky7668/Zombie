@@ -85,4 +85,10 @@ public class win : MonoBehaviour
         Time.timeScale = 1;
         this.enabled = false;
     }
+    public void onclickMainMenu()
+    {
+        SceneManager.LoadScene("home");
+        Time.timeScale = 1;
+        this.enabled = false;
+    }
 }
