@@ -5,12 +5,13 @@ using UnityEngine;
 public class gunController : MonoBehaviour
 {
     public static gunController instance;
-    public GameObject bullet, gunpoint, parent, bullets_number, bullet_prefab;
+    public GameObject bullet, gunpoint, parent, bullets_number, bullet_prefab,losser;
     public Sprite bullets;
     GameObject[] imagesArray = new GameObject[6];
     internal AudioSource audioSource;
     public AudioClip gunFire, zombie, zombieDie;
     LineRenderer line;
+    float angle;
 
     internal int bulletCounter = 5, totalbullet = 5;
 
@@ -39,7 +40,7 @@ public class gunController : MonoBehaviour
 
         Vector2 offset = new Vector2(mousePos.x - gunPos.x, mousePos.y - gunPos.y);
 
-        float angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
+        angle = Mathf.Atan2(offset.y, offset.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
         if (Input.GetMouseButtonUp(0))
         {
@@ -56,6 +57,7 @@ public class gunController : MonoBehaviour
         Vector2 directionOfBullet = (Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position)).normalized;
         audioSource.PlayOneShot(gunFire);
         GameObject g = Instantiate(bullet, gunpoint.transform.position, Quaternion.identity);
+        g.transform.rotation = Quaternion.Euler(0,0,angle); 
         g.GetComponent<Rigidbody2D>().AddForce(directionOfBullet * 1500);
         destroy();
 
@@ -74,5 +76,17 @@ public class gunController : MonoBehaviour
         {
             Debug.Log("Game over");
         }
+
+        if(bulletCounter == 0)
+        {
+            StartCoroutine(nameof(onLose));
+        }
+    }
+
+    IEnumerator onLose()
+    {
+        yield return new WaitForSeconds(2f);
+            losser.SetActive(true);
+
     }
 }

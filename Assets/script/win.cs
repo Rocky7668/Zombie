@@ -91,4 +91,10 @@ public class win : MonoBehaviour
         Time.timeScale = 1;
         this.enabled = false;
     }
+    public void onclickRetey()
+    {
+        SceneManager.LoadScene("play");
+        Time.timeScale = 1;
+        this.enabled = false;
+    }
 }

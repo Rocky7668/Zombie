@@ -76,9 +76,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 142699837
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c2f4bc103e963ff46b5ced48137f97e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 01c329ba128575948a0c0d376840e7a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798840870871118731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9bc042b5c29722849aa4d84406eb1a8f, type: 3}
   m_Name: 
@@ -162,7 +162,7 @@ TrailRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 142699837
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Time: 0.08
   m_Parameters:
@@ -247,7 +247,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.25}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.25, y: 0.25}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 798840870871118731}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8aadcdadd67302740813be281efaa7cc, type: 3}
   m_Name: 
